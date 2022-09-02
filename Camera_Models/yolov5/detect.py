@@ -1,6 +1,6 @@
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
-Run YOLOv5 detection inference on images, videos, directories, streams, etc.
+Run YOLOv5 detection inference on images, videos, directories, globs, YouTube, webcam, streams, etc.
 
 Usage - sources:
     $ python detect.py --weights yolov5s.pt --source 0                               # webcam
@@ -31,7 +31,6 @@ import sys
 from pathlib import Path
 
 import torch
-import torch.backends.cudnn as cudnn
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
@@ -97,7 +96,6 @@ def run(
     # Dataloader
     if webcam:
         view_img = check_imshow()
-        cudnn.benchmark = True  # set True to speed up constant image size inference
         dataset = LoadStreams(source, img_size=imgsz, stride=stride, auto=pt)
         bs = len(dataset)  # batch_size
     else:
