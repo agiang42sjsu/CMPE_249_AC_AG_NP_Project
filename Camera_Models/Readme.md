@@ -2,7 +2,7 @@
 
 - This folder contains the files needed to run the inference models for Mobilenet-SSD and YOLOv5
 
-- Each model has been trained on the MSCOCO dataset which has 80 classes
+- Each model has been trained on the MSCOCO dataset which has 80 classes including the 3 classes our group are conerned with: Person, Stop sign, and Ball
 - The models was then converted into tflite compatible models and also quantized from 32-bit floating point to 8-bit integer weights and biases
 
 ## Model Comparison
