@@ -14,7 +14,7 @@ The YOLOv5 object detection model has an average latency of just around 1100 mil
 
 The model was easily able to detect both the stop sign and the person at around 8 inches from the objects.
 
-#### Instructions
+#### Instructions on How to Run the Model
 - To run YOLOv5 object detection using a usb webcam interface, install the proper python libraries and run the following command
 
 `python3 detect.py --source 0`
@@ -30,7 +30,7 @@ The model was also easily able to detect both the stop sign and the person start
 
 The above image shows that at around 14 inches from the objects, the model was not able to detect the person or the stop sign.
 
-#### Instructions
+#### Instructions on How to Run the Model
 - To run Mobilenet object detection using a usb webcam interface, install the proper python libraries and run the following command
 
 `python3 TFLite_detection_webcam.py --modeldir=Sample_TFLite_model`
