@@ -35,6 +35,13 @@ The above image shows that at around 14 inches from the objects, the model was n
 
 `python3 TFLite_detection_webcam.py --modeldir=Sample_TFLite_model`
 
+#### Mobilenet Demonstration
+https://user-images.githubusercontent.com/72683263/188299327-684e3409-d312-42d5-ae57-774246ef20cd.mp4
+
+- Object detection model successfully detecting person object at a distance of 6 inches
+
+
+
 ### Credits
 
 YOLOv5 model adapted from ultralytics' github: https://github.com/ultralytics/yolov5
