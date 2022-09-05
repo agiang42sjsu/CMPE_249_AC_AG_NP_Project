@@ -13,7 +13,8 @@ ECHO3 = 17
 #Back Sonar
 TRIG4 = 4
 ECHO4 = 6
-
+#Stop GPIO 
+GPIOstop = 26
 
 GPIO.setup(TRIG1,GPIO.OUT)
 GPIO.setup(ECHO1,GPIO.IN)
@@ -27,6 +28,8 @@ GPIO.setup(TRIG3, False)
 GPIO.setup(TRIG4,GPIO.OUT)
 GPIO.setup(ECHO4,GPIO.IN)
 GPIO.setup(TRIG4, False)
+GPIO.setup(GPIOstop, GPIO.OUT)
+GPIO.setup(GPIOstop, False)
 
 while True:
     print("Wait for Front Sonar to send signal")
@@ -42,7 +45,10 @@ while True:
     distance1 = pulse_duration1 * 17150
     distance1 = round(distance1,2)
     print("Distance for Front Sonar: ", distance1)
-
+		if distance1 < 8:
+			print("***Object Close***")
+			GPIO.setup(GPIOstop, True) 
+		
     print("Wait for Right Sonar to send signal")
     time.sleep(2)
     GPIO.output(TRIG2, True)
@@ -56,7 +62,10 @@ while True:
     distance2 = pulse_duration2 * 17150
     distance2 = round(distance2,2)
     print("Distance for Right Sonar: ", distance2)
-
+	if distance2 < 8:
+		print("***Object Close***")
+		GPIO.setup(GPIOstop, True) 
+		
     print("Wait for Rear Sonar to send signal")
     time.sleep(2)
     GPIO.output(TRIG3, True)
@@ -70,7 +79,10 @@ while True:
     distance3 = pulse_duration3 * 17150
     distance3 = round(distance3,2)
     print("Distance for Rear Sonar: ", distance3)
-
+	if distance3 < 8:
+		print("***Object Close***")
+		GPIO.setup(GPIOstop, True) 
+		
     print("Wait for Left Sonar to send signal")
     time.sleep(2)
     GPIO.output(TRIG4, True)
@@ -83,6 +95,8 @@ while True:
     pulse_duration4 = pulse_end4 - pulse_start4
     distance4 = pulse_duration4 * 17150
     distance4 = round(distance4,2)
-    print("Distance for Front Sonar: ", distance4)
- 
+    print("Distance for Left Sonar: ", distance4)
+ 	if distance4 < 8:
+		print("***Object Close***")
+		GPIO.setup(GPIOstop, True) 
  GPIO.cleanup()
