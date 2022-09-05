@@ -1,4 +1,5 @@
 # Camera Object Detection Model
+- Model comparison images and Demo video located in this readme
 
 - This folder contains the files needed to run the inference models for Mobilenet-SSD and YOLOv5
 - This folder also contains the ROS python file used to intalize the publisher node and the code to publish to the Obect_Detection topic whenever a Person, Stop sign, or Ball is detected by the Object detection model
